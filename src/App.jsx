@@ -8,6 +8,7 @@ function App() {
     <main>
       <NavBar />
       <HeroSection />
+      <div className="h-screen"></div>
     </main>
   );
 }

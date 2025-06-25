@@ -36,10 +36,16 @@ const HeroSection = () => {
       scrollTrigger: {
         trigger: ".hero-container",
         start: "1% top",
-        end: "bottom 20%",
+
+        end: "bottom top",
         scrub: true,
-        markers: true,
       },
+    });
+    heroTl.to(".hero-container", {
+      rotate: 5,
+      scale: 0.95,
+      yPercent: 3,
+      ease: "power1.inOut",
     });
   });
   return (
