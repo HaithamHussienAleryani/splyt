@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-gsap.registerPlugin(SplitText);
+
 const HeroSection = () => {
   useGSAP(() => {
     const heroTitle = SplitText.create(".hero-title", { type: "chars" });
@@ -31,6 +31,16 @@ const HeroSection = () => {
         },
         "-=0.5"
       );
+
+    const heroTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hero-container",
+        start: "1% top",
+        end: "bottom 20%",
+        scrub: true,
+        markers: true,
+      },
+    });
   });
   return (
     <section className="bg-main-bg">
