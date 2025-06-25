@@ -42,19 +42,19 @@ const HeroSection = () => {
       },
     });
     heroTl.to(".hero-container", {
-      rotate: 5,
-      scale: 0.95,
-      yPercent: 3,
+      rotate: 7,
+      scale: 0.9,
+      yPercent: 30,
       ease: "power1.inOut",
     });
   });
   return (
     <section className="bg-main-bg">
-      <div className="hero-container">
+      <div className="hero-container ">
         <img
           src="/images/static-img.png"
           alt="hero-image"
-          className="absolute start-1/2 -translate-x-1/2 object-auto scale-100 md:scale-150 top-10"
+          className="absolute start-1/2 -translate-x-1/2 size-full object-auto scale-100 md:scale-150 top-10"
         />
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
