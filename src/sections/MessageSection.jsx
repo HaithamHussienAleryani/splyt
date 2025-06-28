@@ -11,10 +11,10 @@ function MessageSection() {
       type: "words",
     });
 
-    // const paragraph = SplitText.create(".message-content p", {
-    //   type: "words , lines",
-    //   linesClass: "paragraph-line",
-    // });
+    const paragraph = SplitText.create(".message-content p", {
+      type: "words , lines",
+      linesClass: "paragraph-line",
+    });
 
     gsap.to(fmsg.words, {
       color: "#faeade",
@@ -46,7 +46,7 @@ function MessageSection() {
       scrollTrigger: {
         trigger: ".msg-text-scroll",
         start:"top 60%",
-        markers: true,
+   
       },
     });
     revealTl.to(".msg-text-scroll", {
@@ -54,6 +54,21 @@ function MessageSection() {
     clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
       ease: "circ.out",
     })
+    const paragraphTl = gsap.timeline({
+      scrollTrigger:{
+        trigger: ".message-content p",
+        start: "top center",
+        markers: true,
+      }
+    })
+    paragraphTl.from(paragraph.words, {
+      yPercent: 300,
+      opacity: 0,
+      rotate: 3,
+      ease: "power1.inOut",
+      duration: 1,
+      stagger: 0.01,
+    });
   });
 
   return (
