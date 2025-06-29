@@ -42,7 +42,7 @@ function MessageSection() {
       },
     });
     const revealTl = gsap.timeline({
-      delay:1,
+      delay:0.3,
       scrollTrigger: {
         trigger: ".msg-text-scroll",
         start:"top 60%",
@@ -57,8 +57,7 @@ function MessageSection() {
     const paragraphTl = gsap.timeline({
       scrollTrigger:{
         trigger: ".message-content p",
-        start: "top center",
-       
+        start: "top 70%",
       }
     })
     paragraphTl.from(paragraph.words, {
