@@ -1,8 +1,8 @@
 import React from 'react'
 
-const FalvorSection = () => {
+const FlavorSection = () => {
   return (
-    <section className='flavor-section'>FalvorSection</section>
+    <section className='flavor-section'></section>
   )
 }
 
