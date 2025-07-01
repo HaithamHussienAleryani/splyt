@@ -5,7 +5,7 @@ import { SplitText } from "gsap/all";
 const HeroSection = () => {
   useGSAP(() => {
     const heroTitle = SplitText.create(".hero-title", { type: "chars" });
-    const tl = gsap.timeline({ delay: 1 });
+    const tl = gsap.timeline({ delay: 1.7 });
     tl.to(".hero-content", {
       opacity: 1,
       y: 0,
@@ -51,9 +51,12 @@ const HeroSection = () => {
   return (
     <section className="bg-main-bg">
       <div className="hero-container ">
-        <img
-          src="/images/static-img.png"
+        <video
+          src="/videos/hero-bg.mp4"
           alt="hero-image"
+          autoPlay
+          muted
+          playsInline
           className="absolute start-1/2 -translate-x-1/2 size-full object-cover scale-100 md:scale-150 top-10"
         />
         <div className="hero-content opacity-0">
