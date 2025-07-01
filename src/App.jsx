@@ -10,6 +10,7 @@ import NutritionSection from "./sections/NutritionSection";
 import BenefitSection from "./sections/BenefitSection";
 import TestimonialSection from "./sections/TestimonialSection";
 import FooterSection from "./sections/FooterSection";
+import { Suspense } from "react";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -26,13 +27,15 @@ function App() {
       <NavBar />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <HeroSection />
-          <MessageSection />
-          <FlavorSection />
-          <NutritionSection />
-          <BenefitSection />
-          <TestimonialSection />
-          <FooterSection />
+          <Suspense fallback={<div>Loading...</div>}>
+            <HeroSection />
+            <MessageSection />
+            <FlavorSection />
+            <NutritionSection />
+            <BenefitSection />
+            <TestimonialSection />
+            <FooterSection />
+          </Suspense>
         </div>
       </div>
     </main>

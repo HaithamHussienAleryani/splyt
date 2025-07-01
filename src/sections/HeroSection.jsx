@@ -74,8 +74,8 @@ const HeroSection = () => {
             </div>
           </div>
           <h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-            asperiores voluptatums{" "}
+            Live life to the fullest with SPYLT: Shatter boredom and embrace
+            your inner kid with every deliciously smooth chug.
           </h2>
           <div className="hero-button">
             <p>check splyt</p>
