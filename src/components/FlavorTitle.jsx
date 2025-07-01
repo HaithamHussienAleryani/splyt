@@ -1,8 +1,44 @@
 import { useGSAP } from "@gsap/react";
 import gsap, { SplitText } from "gsap/all";
+import { useMediaQuery } from "react-responsive";
 
 const FlavorTitle = () => {
+  const isTablet = useMediaQuery({
+    query: "(max-width: 1024px)",
+  });
+
   useGSAP(() => {
+    if (!isTablet) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".flavor-section",
+          start: "top top",
+          end: "bottom 80%",
+          scrub: true,
+        },
+      });
+      tl.to(".first-text-split", {
+        xPercent: -30,
+        ease: "power1.inOut",
+      })
+        .to(
+          ".flavor-text-scroll",
+          {
+            xPercent: -22,
+            ease: "power1.inOut",
+          },
+          "<"
+        )
+        .to(
+          ".second-text-split",
+          {
+            xPercent: -10,
+            ease: "power1.inOut",
+          },
+          "<"
+        );
+    }
+
     const firstTextSplit = SplitText.create(".first-text-split h1", {
       type: "chars",
     });
