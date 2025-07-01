@@ -54,7 +54,7 @@ const HeroSection = () => {
         <img
           src="/images/static-img.png"
           alt="hero-image"
-          className="absolute start-1/2 -translate-x-1/2 size-full object-auto scale-100 md:scale-150 top-10"
+          className="absolute start-1/2 -translate-x-1/2 size-full object-cover scale-100 md:scale-150 top-10"
         />
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
