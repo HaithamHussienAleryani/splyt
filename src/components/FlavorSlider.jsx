@@ -1,26 +1,32 @@
 import { useGSAP } from "@gsap/react";
 import { flavorlists } from "../constants";
 import gsap from "gsap/all";
+import { useMediaQuery } from "react-responsive";
 import { useRef } from "react";
 
 const FlavorSlider = () => {
   const sliderRef = useRef();
+  const isTablet = useMediaQuery({
+    query: "(max-width: 1024px)",
+  });
   useGSAP(() => {
-    const scrollAmount = sliderRef.current.scrollWidth - window.innerWidth;
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".flavor-section",
-        start: "2% top",
-        end: `+=${scrollAmount + 1300}px`,
-        scrub: true,
-        markers: true,
-        pin: true,
-      },
-    });
-    tl.to(".flavor-section", {
-      x: `-${scrollAmount + 1300}px`,
-      ease: "power1.inOut",
-    });
+    if (!isTablet) {
+      const scrollAmount = sliderRef.current.scrollWidth - window.innerWidth;
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".flavor-section",
+          start: "2% top",
+          end: `+=${scrollAmount + 1300}px`,
+          scrub: true,
+          markers: true,
+          pin: true,
+        },
+      });
+      tl.to(".flavor-section", {
+        x: `-${scrollAmount + 1300}px`,
+        ease: "power1.inOut",
+      });
+    }
   });
   return (
     <div ref={sliderRef} className="slider-wrapper">
